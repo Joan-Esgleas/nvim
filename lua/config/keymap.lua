@@ -13,8 +13,8 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<CR>'] = cmp.mapping.confirm({select = false}),
     ['<Space>'] = cmp.mapping.confirm({select = false}),
-    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<C-l>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
   }),
 })
 
