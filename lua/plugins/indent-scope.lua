@@ -1,4 +1,4 @@
-local opts = {
+require("mini.indentscope").setup {
   draw = {
     delay = 10,
   },
@@ -9,4 +9,3 @@ local opts = {
     try_as_border = true,
   },
 }
-require('mini.indentscope').setup(opts)

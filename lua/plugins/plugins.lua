@@ -23,6 +23,7 @@ return {
     lazy = true
   },
   { 'neovim/nvim-lspconfig' },
+  { "folke/neodev.nvim" },
 
   -- Complition
   { 'hrsh7th/cmp-nvim-lsp' },
@@ -38,10 +39,10 @@ return {
   { 'echasnovski/mini.indentscope', version = false },
 
   -- Snippets
-{
-	"L3MON4D3/LuaSnip",
-	build = "make install_jsregexp"
-},
+  {
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp"
+  },
   { "rafamadriz/friendly-snippets" },
   { 'saadparwaiz1/cmp_luasnip' },
 
@@ -50,4 +51,3 @@ return {
   { "ellisonleao/gruvbox.nvim" },
 
 }
-

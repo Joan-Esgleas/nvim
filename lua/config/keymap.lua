@@ -7,19 +7,34 @@ vim.keymap.set("n", "<S-w><S-h>", vim.cmd.bprevious)
 -- Lsp keybindigs
 local lsp_zero = require('lsp-zero')
 local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+--Snippetes keybindigs
+local lua_snip = require("luasnip")
+vim.keymap.set({ "i", "s" }, "<C-l>", function()
+  if lua_snip.expand_or_jumpable() then
+    lua_snip.expand_or_jump()
+  end
+end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<C-b>", function()
+  if lua_snip.jumpable(-1) then
+    lua_snip.jump(-1)
+  end
+end, { silent = true })
+
 
 cmp.setup({
   mapping = cmp.mapping.preset.insert({
-    ['<CR>'] = cmp.mapping.confirm({select = false}),
-    ['<Space>'] = cmp.mapping.confirm({select = false}),
-    ['<C-l>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-k>'] = cmp.mapping.select_next_item(cmp_select),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }),
+    ['<Space>'] = cmp.mapping.confirm({ select = false }),
+    ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
+    ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
   }),
 })
 
 lsp_zero.on_attach(function(client, bufnr)
-  local opts = {buffer = bufnr, remap = false}
+  local opts = { buffer = bufnr, remap = false }
 
   vim.keymap.set("n", "<leader>pp", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "<leader>pl", function() vim.diagnostic.goto_next() end, opts)
