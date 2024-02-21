@@ -11,13 +11,13 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
 --Snippetes keybindigs
 local lua_snip = require("luasnip")
-vim.keymap.set({ "i", "s" }, "<C-l>", function()
+vim.keymap.set({ "i", "s" }, "<C-Right>", function()
   if lua_snip.expand_or_jumpable() then
     lua_snip.expand_or_jump()
   end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<C-b>", function()
+vim.keymap.set({ "i", "s" }, "<C-Left>", function()
   if lua_snip.jumpable(-1) then
     lua_snip.jump(-1)
   end
