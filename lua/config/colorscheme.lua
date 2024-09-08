@@ -1,5 +1,5 @@
 -- Default colorscheme
-vim.cmd.colorscheme("catppuccin")
+vim.cmd.colorscheme("gruvbox")
 
 function SetTransparent()
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
